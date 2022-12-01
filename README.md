@@ -64,10 +64,15 @@ developing your own process.
 
   - How I debugged:
 
+  The error was "uninitialized constant ToysController::Toys"  which prompted me to check the create method and realized that there was an unnecessary "s" changing Toys.create to Toy.create resolved the error. 
+
 - Update the number of likes for a toy
 
   - How I debugged:
+  Unpexppected end of Json. I checked and realised that the render format for the toy was not specified and I added the render method to solve the error.
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+404 error. 
+  The delete method in the controler was okay but there was no specified route for delete (destroy) in the rputes. I added it and the error was resolved. 

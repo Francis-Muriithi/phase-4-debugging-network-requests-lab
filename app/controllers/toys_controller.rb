@@ -7,13 +7,17 @@ class ToysController < ApplicationController
   end
 
   def create
-    toy = Toys.create(toy_params)
+    toy = Toy.create(toy_params)
     render json: toy, status: :created
+
+  #changed from "Toys.create" to "Toy.create"
   end
 
   def update
     toy = Toy.find_by(id: params[:id])
     toy.update(toy_params)
+    render json: toy
+    #specified the render method
   end
 
   def destroy
